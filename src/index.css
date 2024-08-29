@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gradient {
+  @apply bg-gradient-to-r from-red-400 to-red-600 text-transparent bg-clip-text;
+}
+.text-indigo{
+  @apply text-indigo-500
+
+}
+.bg-indigo{
+  @apply bg-indigo-500 text-white
+
+}
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+
+:root {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+*{
+  padding: 0;
+  box-sizing: border-box;
+}
+/*button*/
+.btn {
+  display: flex;
+  gap: 6px;
+  padding-top: 0.75rem;   
+  padding-bottom: 0.75rem; 
+  padding-left: 1.2rem;      
+  padding-right: 1.2rem;     
+  margin-left: 0.75rem;   
+  margin-right: 0.75rem;  
+  border-radius: 0.375rem;   
+  color: white;    
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: #D9252A;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+  position: relative;      
+  transition: box-shadow .3s;
+}
+
+.btn:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+ background-color:#F9252A;
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transform: translateX(0);
+}
+
+/*footer-social media*/
+.social-icon {
+  width: 40;
+  height: 40px; 
+}
+
+
+/*loading css */
+.spinner {
+  --gap: 5px;
+  --bg: #E5252A;
+  --height: 23px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.spinner span {
+  background: var(--bg);
+  width: 6px;
+  height: var(--height);
+  animation: grow 1s ease-in-out infinite;
+}
+
+.spinner span:nth-child(2) {
+  animation: grow 1s ease-in-out 0.15s infinite;
+}
+
+.spinner span:nth-child(3) {
+  animation: grow 1s ease-in-out 0.3s infinite;
+}
+
+.spinner span:nth-child(4) {
+  animation: grow 1s ease-in-out 0.475s infinite;
+}
+
+@keyframes grow {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+.MobileNavbar {
+  z-index: 999;
+  transition: all;
+  animation: navbar 0.5s ease-in-out;
+}
+
+@keyframes navbar {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
